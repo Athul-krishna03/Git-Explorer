@@ -1,0 +1,356 @@
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.search-box {
+  margin-bottom: 1.5rem;
+}
+
+.search-box input {
+  padding: 0.5rem;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-box button {
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  border: none;
+  background: #0070f3;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background: #0059c1;
+}
+
+.user-info {
+  margin: 1rem 0;
+}
+
+.user-info img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.repo-list {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.repo-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.repo-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.error {
+  color: red;
+}
+.tabs {
+  display: flex;
+  margin-top: 20px;
+}
+
+.tabs button {
+  padding: 8px 16px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  background: none;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  border-bottom: 2px solid blue;
+  font-weight: bold;
+}
+
+/* Overlay for modal */
+.repo-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal container */
+.repo-popup {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 700px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  gap: 24px;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Avatar and topics section */
+.repo-left {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.repo-left img {
+  max-width: 120px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  border-radius: 70px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+/* Topics */
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.topics span {
+  padding: 4px 8px;
+  background: #d0e7ff;
+  color: #0073e6;
+  font-size: 12px;
+  border-radius: 12px;
+}
+
+.repo-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.repo-info h2 {
+  font-size: 22px;
+  margin: 0 0 8px 0;
+}
+
+.repo-info p {
+  color: #555;
+  margin-top: 8px;
+}
+
+.view-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 16px;
+  background: #0073e6;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.view-btn:hover {
+  background: #005bb5;
+}
+
+/* ===== Toggle Button (Saved Users) ===== */
+.toggle-btn {
+  background: #2563eb;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 1rem;
+  transition: background 0.2s ease;
+}
+
+.toggle-btn:hover {
+  background: #1e40af;
+}
+
+/* ===== Improve Search Box Layout ===== */
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search-box button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #10b981; /* green */
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.search-box button:hover {
+  background: #059669;
+}
+
+/* ===== Tabs Styling (Repos / Followers) ===== */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tabs button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.tabs button:hover {
+  background: #e6f0ff;
+}
+
+.tabs button.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+  font-weight: bold;
+}
+
+/* ===== Default Message (before search) ===== */
+.default-msg {
+  margin-top: 2rem;
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .repo-popup {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .repo-left, .repo-info {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.saved-users {
+  margin-top: 16px;
+  text-align: left;
+}
+
+.saved-users h2 {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.saved-users ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.saved-users li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+.saved-users li:hover {
+  background-color: #f0f8ff;
+}
+
+.saved-users .user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.saved-users .user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.saved-users .buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.saved-users .buttons button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.saved-users .buttons .view-btn {
+  background-color: #0073e6;
+  color: white;
+}
+
+.saved-users .buttons .view-btn:hover {
+  background-color: #005bb5;
+}
+
+.saved-users .buttons .edit-btn {
+  background-color: #ffa500;
+  color: white;
+}
+
+.saved-users .buttons .edit-btn:hover {
+  background-color: #cc8400;
+}

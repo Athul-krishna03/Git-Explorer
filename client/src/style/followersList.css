@@ -1,0 +1,41 @@
+.followers-info {
+  margin-top: 16px;
+  text-align: left;
+}
+
+.followers-info h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.followers-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.followers-info li {
+  display: flex;
+  justify-content: space-between; /* name left, image right */
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.followers-info li:hover {
+  background-color: #f0f8ff;
+}
+
+.followers-info li img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.followers-info li span {
+  font-size: 16px;
+  color: #0073e6;
+}
