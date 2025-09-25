@@ -1,5 +1,5 @@
 import React from "react";
-import type { Repo } from "./repoList";
+import type { Repo } from "./RepoList";
 import "../style/repoDetails.css"
 
 interface RepoDetailsProps {
