@@ -6,6 +6,10 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import { connectDB } from "./config/db";
 import userRoutes from "./routes/user.routes";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 
 const app: Express = express();
 
