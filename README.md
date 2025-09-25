@@ -30,9 +30,12 @@ A **single-page application** (SPA) to explore GitHub users, their repositories,
 ---
 
 ## Screenshots
-<img width="1350" height="629" alt="image" src="https://github.com/user-attachments/assets/34271fac-20b3-4908-882d-f448814f816f" />
-<img width="1351" height="632" alt="image" src="https://github.com/user-attachments/assets/cafc635f-25f8-4ba2-924e-fe1e4b4977bc" />
-<img width="1352" height="636" alt="image" src="https://github.com/user-attachments/assets/130f215c-3bf3-464b-9ea7-0a53b0b67b6f" />
+
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/34271fac-20b3-4908-882d-f448814f816f" width="400" />
+  <img src="https://github.com/user-attachments/assets/cafc635f-25f8-4ba2-924e-fe1e4b4977bc" width="400" />
+  <img src="https://github.com/user-attachments/assets/130f215c-3bf3-464b-9ea7-0a53b0b67b6f" width="400" />
+</p>
 
 ## 📦 Installation
 
