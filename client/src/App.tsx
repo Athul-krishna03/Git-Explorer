@@ -7,7 +7,6 @@ import "./App.css";
 import SavedUsers from "./components/SavedUsers";
 
 const App: React.FC = () => {
-  const [val, setVal] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [activeTab, setActiveTab] = useState<"repos" | "followers">("repos");
   const [selectedRepo, setSelectedRepo] = useState<Repo | null>(null);
@@ -16,20 +15,18 @@ const App: React.FC = () => {
   const { data, isLoading, error, refetch } = useSearch(inputValue);
 
   const handleSearch = () => {
-    if (!val.trim()) return;
-    setInputValue(val);
+    if (!inputValue.trim()) return;
+    setInputValue(inputValue);
     refetch();
   };
 
   const handleFollowerClick = (username: string) => {
-    setVal(username);
     setInputValue(username);
     refetch();
   };
 
   return (
     <div className="app-container">
-      {/* Saved Users Toggle */}
       <div className="header-bar">
         <button
           className="toggle-btn"
@@ -38,36 +35,26 @@ const App: React.FC = () => {
           {savedUsersPart ? "Show All Users" : "Show Saved Users"}
         </button>
       </div>
-
-      {/* Show Saved Users Page */}
       {savedUsersPart && <SavedUsers />}
-
-      {/* Main GitHub Explorer */}
       {!savedUsersPart && (
         <div className="container">
           <h1>GitHub Explorer</h1>
-
-          {/* Search Box */}
           <div className="search-box">
             <input
               type="text"
               placeholder="Enter GitHub username..."
-              value={val}
-              onChange={(e) => setVal(e.target.value)}
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
             />
             <button className="search-btn" onClick={handleSearch}>
               Search
             </button>
           </div>
-
-          {/* Default Message */}
           {!data && !isLoading && !error && (
             <p className="default-msg">🔍 Start by searching a GitHub user</p>
           )}
-
           {isLoading && <p>Loading...</p>}
           {error && <p className="error">{(error as Error).message}</p>}
-
           {data?.user && (
             <>
               <div className="user-info">
@@ -79,8 +66,6 @@ const App: React.FC = () => {
                   <strong>Following:</strong> {data.user.followingCount}
                 </p>
               </div>
-
-              {/* Tabs */}
               <div className="tabs">
                 <button
                   className={activeTab === "repos" ? "active" : ""}
@@ -95,7 +80,6 @@ const App: React.FC = () => {
                   Followers
                 </button>
               </div>
-
               {activeTab === "repos" && (
                 <RepoList repos={data.user.repos} onClickRepo={setSelectedRepo} />
               )}
@@ -105,7 +89,6 @@ const App: React.FC = () => {
                   onClickFollower={handleFollowerClick}
                 />
               )}
-
               {selectedRepo && (
                 <RepoDetails
                   repo={selectedRepo}
