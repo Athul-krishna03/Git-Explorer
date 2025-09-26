@@ -9,6 +9,11 @@ A **single-page application** (SPA) to explore GitHub users, their repositories,
 
 ---
 
+##Demo Link
+  LIVE DEMO (https://git-explorer-pearl.vercel.app)
+  
+  ⚠️ Note: The backend is hosted on Render (free tier). The server will spin down if idle for 20+ minutes, so there may be a short initial delay when loading data.
+
 ## Features
 
 * Search GitHub users by username.
